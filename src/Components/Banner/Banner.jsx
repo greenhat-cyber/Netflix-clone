@@ -21,6 +21,7 @@ function Banner() {
       className="banner"
     >
       <div className="content">
+        <h1 className="title">{index ? index.original_name : ""}</h1>
         <h1 className="title">{index ? index.title : ""}</h1>
         <div className="banner_buttons">
           <button className="buttons ">Play</button>
