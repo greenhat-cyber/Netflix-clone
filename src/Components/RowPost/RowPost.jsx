@@ -12,7 +12,7 @@ function RowPost(props) {
       setMovies(response.data.results)
     })
     
-  }, [])
+  }, [props.urls])
   const opts = {
     height: '390',
     width: '100%',
@@ -38,7 +38,7 @@ axios.get(`/movie/${id}/videos?api_key=${API_KEY}&language=en-US`).then(response
         <div className="posters">
           {movies.map((obj)=>
 
-            <img onClick={()=>handleMovie(obj.id)} className={props.isSmall ? 'smallPoster': 'poster'} src={`${imageUrl+obj.backdrop_path}`} alt="Poster" />
+            <img key={obj.id} onClick={()=>handleMovie(obj.id)} className={props.isSmall ? 'smallPoster': 'poster'} src={`${imageUrl+obj.backdrop_path}`} alt="Poster" />
           )}
             
 
